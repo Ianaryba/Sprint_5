@@ -1,30 +1,25 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from Lokators import EMAIL_BUTTON, REGISTRATION_BUTTON
 
-def test_registration_with_invalid_password():
 
-    driver = webdriver.Chrome()
+def test_registration_with_invalid_password(driver):
+
+
 
     try:
 
         driver.get("https://stellarburgers.nomoreparties.site/register")
 
-
         driver.find_element(By.CSS_SELECTOR, 'input[name="name"]').send_keys("TestUser")
 
-
-        driver.find_element(By.CSS_SELECTOR,
-                            '#root > div > main > div > form > fieldset:nth-child(2) > div > div > input').send_keys(
-            "testuser_1999_002@yandex.ru")
-
+        driver.find_element(By.XPATH, EMAIL_BUTTON).send_keys("testuser_122999_001@yandex.ru")
 
         driver.find_element(By.CSS_SELECTOR, 'input[name="Пароль"]').send_keys("12345")
 
-
-        driver.find_element(By.CSS_SELECTOR, '#root > div > main > div > form > button').click()
+        driver.find_element(By.XPATH, REGISTRATION_BUTTON).click()
 
 
         error_message_element = WebDriverWait(driver, 10).until(
@@ -46,7 +41,3 @@ def test_registration_with_invalid_password():
     finally:
 
         driver.quit()
-
-
-
-test_registration_with_invalid_password()
