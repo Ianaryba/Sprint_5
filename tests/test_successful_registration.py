@@ -16,4 +16,4 @@ def test_successful_registration(driver):
 
     driver.find_element(By.XPATH, REGISTRATION_BUTTON).click()
 
-    driver.quit()
+

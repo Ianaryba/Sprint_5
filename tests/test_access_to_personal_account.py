@@ -2,16 +2,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from Lokators import PERSONAL_ACCOUNT_BUTTON, EMAIL_BUTTON, ENTER_BUTTON_PERSONAL_ACCOUNT, LOGO_BUTTON
+from Lokators import PERSONAL_ACCOUNT_BUTTON, EMAIL_BUTTON, \
+    ENTER_BUTTON_PERSONAL_ACCOUNT
 
 
-def test_access_to_main_page_with_logo(driver):
+def test_access_to_personal_accaunt(driver):
 
 
 
     try:
 
         driver.get("https://stellarburgers.nomoreparties.site/")
+
 
         login_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, PERSONAL_ACCOUNT_BUTTON))
@@ -29,10 +31,8 @@ def test_access_to_main_page_with_logo(driver):
 
         driver.find_element(By.XPATH, ENTER_BUTTON_PERSONAL_ACCOUNT).click()
 
-
-
         login_button = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, LOGO_BUTTON))
+            EC.element_to_be_clickable((By.XPATH, PERSONAL_ACCOUNT_BUTTON))
         )
 
         print("Тест пройден удачно")

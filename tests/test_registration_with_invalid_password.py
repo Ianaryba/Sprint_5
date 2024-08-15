@@ -9,7 +9,7 @@ def test_registration_with_invalid_password(driver):
 
 
 
-    try:
+    
 
         driver.get("https://stellarburgers.nomoreparties.site/register")
 
@@ -38,6 +38,4 @@ def test_registration_with_invalid_password(driver):
             print(f"Некорректный пароль : {error_message_text}")
             assert False, "Не правильное ссобщение об ошибке"
 
-    finally:
 
-        driver.quit()

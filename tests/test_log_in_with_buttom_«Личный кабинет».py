@@ -30,6 +30,3 @@ def test_login_via_personal_account(driver):
     except Exception as e:
         print(f"Тест провален : {e}")
 
-    finally:
-
-        driver.quit()

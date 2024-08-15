@@ -35,8 +35,5 @@ def test_login_with_form_registration(driver):
     except Exception as e:
         print(f"Тест провален : {e}")
 
-    finally:
-
-        driver.quit()
 
 

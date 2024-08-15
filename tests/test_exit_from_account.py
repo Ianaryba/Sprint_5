@@ -50,6 +50,3 @@ def test_logout_from_account(driver):
     except Exception as e:
         print(f"Тест не пройден : {e}")
 
-    finally:
-
-        driver.quit()

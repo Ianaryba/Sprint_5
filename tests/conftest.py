@@ -4,5 +4,6 @@ from selenium import webdriver
 @pytest.fixture(scope = 'session') # фикстура, которая добавляет webdriver
 def driver():
     driver = webdriver.Chrome()
-    return driver
+    yield driver
+    driver.quit()
 

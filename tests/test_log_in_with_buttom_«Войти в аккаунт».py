@@ -33,6 +33,3 @@ def test_login_button(driver):
     except Exception as e:
         print(f"Тест не пройден : {e}")
 
-    finally:
-
-        driver.quit()

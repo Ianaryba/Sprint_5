@@ -37,6 +37,3 @@ def test_login_with_forgot_password(driver):
     except Exception as e:
         print(f"Тест провален : {e}")
 
-    finally:
-
-        driver.quit()
